@@ -230,25 +230,24 @@ export function simplifyGeo(geometry, maxLength = 5000) {
   let length = JSON.stringify(simple).length;
   let precision = 5;
 
-  while (length >= maxLength && precision >= 2) {
-    
+  while (length > maxLength && precision >= 2) {
     if (simple.type === "MultiPolygon") {
     const area = turfArea(simple)
-    simple.coordinates = simple.coordinates.filter(d => turfArea({type: 'Polygon', coordinates: d}) > area * Math.min(Math.pow(10, -precision), 0.01))
+        simple.coordinates = simple.coordinates.filter(d => turfArea({type: 'Polygon', coordinates: d}) > area * Math.min(Math.pow(10, -precision), 0.01))
+    }
+    try {
+        simple = turfSimplify(simple, {
+            highQuality: true,
+            tolerance: Math.pow(10, -precision),
+        });
+        simple.coordinates = roundAll(simple.coordinates, Math.ceil(precision));
+        length = JSON.stringify(simple).length;
+        precision -= 0.5;
+    } catch(err) {
+        console.warn(err);
+        break;
+    }
   }
-
-    simple = turfSimplify(simple, {
-      highQuality: true,
-      tolerance: Math.pow(10, -precision),
-    });
-    simple.coordinates = roundAll(simple.coordinates, Math.ceil(precision));
-    length = JSON.stringify(simple).length;
-    precision -= 0.5;
-  }
-  // console.debug (
-  //   'simplified polygon',
-  //   `string length: ${length}, precision: ${precision}`
-  // );
   return simple;
 }
 
