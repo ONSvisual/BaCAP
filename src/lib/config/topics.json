@@ -27,10 +27,7 @@
     "code": "population_mye",
     "label": "Population",
     "desc": "Mid-year estimate of the total number of people.",
-    "tableCode": [
-      "NM_2014_1",
-      "NM_2002_1"
-    ],
+    "tableCode": "NM_2014_1",
     "cellCode": "c_age",
     "dateLabel": 2024,
     "date": 2024,
@@ -270,14 +267,9 @@
     "code": "resident_age_mye",
     "label": "Age profile",
     "desc": "Five year age bands based on mid-year population estimates.",
-    "tableCode": [
-      "NM_2014_1",
-      "NM_2002_1"
-    ],
+    "tableCode": "NM_2014_1",
     "cellCode": "c_age",
-    "measures": [
-      20100
-    ],
+    "measures": [20100],
     "dateLabel": 2024,
     "date": 2024,
     "chart": "profile",
@@ -450,14 +442,9 @@
     "code": "sex_mye",
     "label": "Sex",
     "desc": "Mid-year estimate of the proportion of females and males.",
-    "tableCode": [
-      "NM_2014_1",
-      "NM_2002_1"
-    ],
+    "tableCode": "NM_2014_1",
     "cellCode": "gender",
-    "measures": [
-      20100
-    ],
+    "measures": [20100],
     "dateLabel": 2024,
     "date": 2024,
     "unit": "%",

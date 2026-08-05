@@ -88,7 +88,7 @@ function processNomiswebData(data, table) {
   const hasTwoTables = Array.isArray(table.tableCode);
   const processedData = [];
 
-  if(hasTwoTables){
+  if(["sex_mye", "resident_age_mye"].includes(table.code)){
     // calculate percentage ourselves
     return calcPercent(data, table);
   }else if(hasBothCountAndPercentage && !hasTwoTables){
