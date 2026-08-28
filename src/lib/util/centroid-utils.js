@@ -197,14 +197,20 @@ class Centroids {
     return compressed;
   }
 
-  identifyHighestGeography(codeList) {
+  identifyHighestGeography(codeList, compareList = null) {
     const pattern = /[EW]0([0-7])\d{5}/i;  // Case-insensitive matching
+    const compareSet = Array.isArray(compareList)
+      ? new Set(compareList.map(code => String(code).toUpperCase()))
+      : null;
     let highestLevel = null;
 
     for (const code of codeList) {
       const match = code.match(pattern);
       if (match) {
         const level = parseInt(match[1]);
+        if (level === 1 && compareSet && !compareSet.has(String(code).toUpperCase())) { //this checks that an LSOA appears in both the selected and the compressed OA list
+          continue;
+        }
         if (highestLevel === null || level > highestLevel) {  // Changed < to > to find highest
           highestLevel = level;
         }
@@ -265,7 +271,7 @@ class Centroids {
     // compress LSOA list
     const compressedLsoa = this.compress(lsoa_all, 'lsoa')
     const bbox = this.bounds(oa_all, 'oa');
-    const highestLevel = this.identifyHighestGeography(this.compress(oa_all, 'oa'))
+    const highestLevel = this.identifyHighestGeography(this.compress(oa_all, 'oa'),this.compress(lsoa_all,'lsoa'))
     var merge = {};
     merge.properties = {
       name,
