@@ -17,7 +17,7 @@
 
   function groupTopics(indicators) {
     const filtered = indicators
-      .filter((d) => isDatasetAvailableInVersion(d, get(version)))
+      .filter((d) => isDatasetAvailableInVersion(d, get(version)) && d.chart !== "line")
       .map((d) => getDatasetForVersion(d, get(version)))
       .sort((a, b) => a.label.localeCompare(b.label));
     const topics = {};

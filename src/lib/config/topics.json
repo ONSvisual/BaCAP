@@ -30,6 +30,7 @@
     "tableCode": "NM_2014_1",
     "cellCode": "c_age",
     "dateLabel": 2024,
+    "dateLabelLong": 2024,
     "date": 2024,
     "measures": [
       20100
@@ -46,7 +47,6 @@
       }
     ],
     "queryExt": "&gender=0",
-    "dateLabelLong": 2024,
     "url": "peoplepopulationandcommunity/populationandmigration/populationestimates/methodologies/midyearpopulationestimatesqmi",
     "lowestGeography": "oa",
     "census": false,
@@ -56,13 +56,13 @@
     "versions":{
       "2":{
         "dateLabel": 2022,
-        "date": 2022,
-        "dateLabelLong": 2022
+        "dateLabelLong": 2022,
+        "date": 2022
       },
       "4":{
         "dateLabel": 2024,
-        "date": 2024,
-        "dateLabelLong": 2024
+        "dateLabelLong": 2024,
+        "date": 2024
       }
     }
   },
@@ -102,7 +102,8 @@
     "cellCode": "sales",
     "chart": "number",
     "measures": 20100,
-    "dateLabel": "Year ending Sept 2024",
+    "dateLabel": "Year ending Sep 2024",
+    "dateLabelLong": "Year ending September 2024",
     "date": "2024-09",
     "unit": "sales",
     "base": "all sales",
@@ -115,23 +116,220 @@
       }
     ],
     "lowestGeography": "lsoa",
-    "source": "HM Land Registry – Price Paid Transaction Data",
+    "source": "HM Land Registry",
     "census": false,
-    "dateLabelLong": "Year ending September 2024",
     "topic": "Housing",
     "validFromVersion": 2,
     "versions":{
       "2":{
-        "dateLabel":"Year ending Sept 2023",
-        "date":"2023-09",
-        "dateLabelLong": "Year ending September 2023"
+        "dateLabel":"Year ending Sep 2023",
+        "dateLabelLong": "Year ending September 2023",
+        "date":"2023-09"
       },
       "3":{
-        "dateLabel":"Year ending Sept 2024",
-        "date":"2024-09",
-        "dateLabelLong": "Year ending September 2024"
+        "dateLabel":"Year ending Sep 2024",
+        "dateLabelLong": "Year ending September 2024",
+        "date":"2024-09"
       }
     }
+  },
+  {
+    "code": "residential_property_sales_timeseries",
+    "label": "Residential property sales timeseries",
+    "desc": "Number of residential property sales in England and Wales.",
+    "descLong": "<p>The statistics in this dataset report the count of all dwellings sold and registered in the 12 months to September each year. They are calculated using open data from the HM Land Registry, a source of comprehensive record level administrative data on property transactions.</p>",
+    "url": "peoplepopulationandcommunity/housing/methodologies/housepricestatisticsforsmallareasqmi",
+    "tableCode": "NM_2402_1",
+    "cellCode": "date",
+    "chart": "line",
+    "measures": 20100,
+    "dateLabel": "Sep 1996 to Sep 2024",
+    "dateLabelLong": "September 1996 to September 2024",
+    "date": false,
+    "unit": "sales",
+    "base": "all sales",
+    "categories": [
+      {
+        "label": "Sep 1996",
+        "cells": [
+          "1996-09"
+        ]
+      },
+      {
+        "label": "Sep 1997",
+        "cells": [
+          "1997-09"
+        ]
+      },
+      {
+        "label": "Sep 1998",
+        "cells": [
+          "1998-09"
+        ]
+      },
+      {
+        "label": "Sep 1999",
+        "cells": [
+          "1999-09"
+        ]
+      },
+      {
+        "label": "Sep 2000",
+        "cells": [
+          "2000-09"
+        ]
+      },
+      {
+        "label": "Sep 2001",
+        "cells": [
+          "2001-09"
+        ]
+      },
+      {
+        "label": "Sep 2002",
+        "cells": [
+          "2002-09"
+        ]
+      },
+      {
+        "label": "Sep 2003",
+        "cells": [
+          "2003-09"
+        ]
+      },
+      {
+        "label": "Sep 2004",
+        "cells": [
+          "2004-09"
+        ]
+      },
+      {
+        "label": "Sep 2005",
+        "cells": [
+          "2005-09"
+        ]
+      },
+      {
+        "label": "Sep 2006",
+        "cells": [
+          "2006-09"
+        ]
+      },
+      {
+        "label": "Sep 2007",
+        "cells": [
+          "2007-09"
+        ]
+      },
+      {
+        "label": "Sep 2008",
+        "cells": [
+          "2008-09"
+        ]
+      },
+      {
+        "label": "Sep 2009",
+        "cells": [
+          "2009-09"
+        ]
+      },
+      {
+        "label": "Sep 2010",
+        "cells": [
+          "2010-09"
+        ]
+      },
+      {
+        "label": "Sep 2011",
+        "cells": [
+          "2011-09"
+        ]
+      },
+      {
+        "label": "Sep 2012",
+        "cells": [
+          "2012-09"
+        ]
+      },
+      {
+        "label": "Sep 2013",
+        "cells": [
+          "2013-09"
+        ]
+      },
+      {
+        "label": "Sep 2014",
+        "cells": [
+          "2014-09"
+        ]
+      },
+      {
+        "label": "Sep 2015",
+        "cells": [
+          "2015-09"
+        ]
+      },
+      {
+        "label": "Sep 2016",
+        "cells": [
+          "2016-09"
+        ]
+      },
+      {
+        "label": "Sep 2017",
+        "cells": [
+          "2017-09"
+        ]
+      },
+      {
+        "label": "Sep 2018",
+        "cells": [
+          "2018-09"
+        ]
+      },
+      {
+        "label": "Sep 2019",
+        "cells": [
+          "2019-09"
+        ]
+      },
+      {
+        "label": "Sep 2020",
+        "cells": [
+          "2020-09"
+        ]
+      },
+      {
+        "label": "Sep 2021",
+        "cells": [
+          "2021-09"
+        ]
+      },
+      {
+        "label": "Sep 2022",
+        "cells": [
+          "2022-09"
+        ]
+      },
+      {
+        "label": "Sep 2023",
+        "cells": [
+          "2023-09"
+        ]
+      },
+      {
+        "label": "Sep 2024",
+        "cells": [
+          "2024-09"
+        ]
+      }
+    ],
+    "queryExt": "&sales=0",
+    "lowestGeography": "lsoa",
+    "source": "HM Land Registry",
+    "census": false,
+    "topic": "Housing",
+    "validFromVersion": 4
   },
   {
     "code": "resident_age",
@@ -142,6 +340,8 @@
     "tableCode": "NM_2020_1",
     "cellCode": "c2021_age_19",
     "measures": [20100,20301],
+    "dateLabel":2021,
+    "dateLabelLong":2021,
     "chart": "profile",
     "unit": "%",
     "base": "all people",
@@ -260,8 +460,7 @@
     "topic": "Demography and migration",
     "census": true,
     "validFromVersion": 1,
-    "lastValidVersion":1,
-    "dateLabelLong":2021
+    "lastValidVersion":1
   },
   {
     "code": "resident_age_mye",
@@ -271,6 +470,7 @@
     "cellCode": "c_age",
     "measures": [20100],
     "dateLabel": 2024,
+    "dateLabelLong": 2024,
     "date": 2024,
     "chart": "profile",
     "unit": "%",
@@ -387,7 +587,6 @@
     ],
     "queryExt": "&gender=0",
     "lowestGeography": "oa",
-    "dateLabelLong": 2024,
     "census": false,
     "url": "peoplepopulationandcommunity/populationandmigration/populationestimates/methodologies/midyearpopulationestimatesqmi",
     "source": "ONS – Mid-year estimates",
@@ -396,13 +595,13 @@
     "versions":{
       "2":{
         "dateLabel": 2022,
-        "date": 2022,
-        "dateLabelLong": 2022
+        "dateLabelLong": 2022,
+        "date": 2022
       },
       "4":{
         "dateLabel": 2024,
-        "date": 2024,
-        "dateLabelLong": 2024
+        "dateLabelLong": 2024,
+        "date": 2024
       }
     }
   },
@@ -446,6 +645,7 @@
     "cellCode": "gender",
     "measures": [20100],
     "dateLabel": 2024,
+    "dateLabelLong": 2024,
     "date": 2024,
     "unit": "%",
     "base": "all people",
@@ -464,7 +664,6 @@
       }
     ],
     "lowestGeography": "oa",
-    "dateLabelLong": 2024,
     "census": false,
     "url": "peoplepopulationandcommunity/populationandmigration/populationestimates/methodologies/midyearpopulationestimatesqmi",
     "queryExt": "&c_age=200",
@@ -474,13 +673,13 @@
     "versions":{
       "2":{
         "dateLabel": 2022,
-        "date": 2022,
-        "dateLabelLong": 2022
+        "dateLabelLong": 2022,
+        "date": 2022
       },
       "4":{
         "dateLabel": 2024,
-        "date": 2024,
-        "dateLabelLong": 2024
+        "dateLabelLong": 2024,
+        "date": 2024
       }
     }
   },
@@ -490,9 +689,10 @@
     "desc": "The number of babies born in a year, excluding stillbirths.",
     "tableCode": "NM_206_1",
     "measures": 20100,
-    "dateLabel": 2023,
+    "dateLabel": 2024,
+    "dateLabelLong": 2024,
     "date": false,
-    "cellCode": "time",
+    "cellCode": "date",
     "chart": "number",
     "unit": "live births",
     "base": "all live births",
@@ -505,24 +705,57 @@
       }
     ],
     "lowestGeography": "lsoa",
-    "dateLabelLong": 2024,
     "census": false,
-    "url": "peoplepopulationandcommunity/populationandmigration/populationestimates/methodologies/midyearpopulationestimatesqmi",
+    "url": "peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/methodologies/birthsqmi",
     "source": "ONS - Birth registrations",
     "topic": "Demography and migration",
     "validFromVersion": 2,
     "versions":{
       "2":{
         "dateLabel": 2023,
-        "date": 2023,
-        "dateLabelLong": 2023
+        "dateLabelLong": 2023,
+        "date": 2023
       },
       "4":{
         "dateLabel": 2024,
-        "date": 2024,
-        "dateLabelLong": 2024
+        "dateLabelLong": 2024,
+        "date": 2024
       }
     }
+  },
+  {
+    "code": "births_timeseries",
+    "label": "Live births timeseries",
+    "desc": "The number of babies born in a year, excluding stillbirths.",
+    "tableCode": "NM_206_1",
+    "measures": 20100,
+    "dateLabel": "2023 to 2024",
+    "dateLabelLong": "2023 to 2024",
+    "date": false,
+    "cellCode": "date",
+    "chart": "line",
+    "unit": "live births",
+    "base": "all live births",
+    "categories": [
+      {
+        "label": "2023",
+        "cells": [
+          2023
+        ]
+      },
+      {
+        "label": "2024",
+        "cells": [
+          2024
+        ]
+      }
+    ],
+    "lowestGeography": "lsoa",
+    "census": false,
+    "url": "peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/methodologies/birthsqmi",
+    "source": "ONS - Birth registrations",
+    "topic": "Demography and migration",
+    "validFromVersion": 4
   },
   {
     "code": "deaths",
@@ -532,6 +765,7 @@
     "cellCode": "measure",
     "measures": 20100,
     "dateLabel": 2024,
+    "dateLabelLong": 2024,
     "date": 2024,
     "chart": "number",
     "unit": "deaths",
@@ -546,8 +780,7 @@
     ],
     "queryExt": "&cause_of_death=0&gender=0&age=0",
     "lowestGeography": "lsoa",
-    "url": "peoplepopulationandcommunity/populationandmigration/populationestimates/methodologies/midyearpopulationestimatesqmi",
-    "dateLabelLong": 2024,
+    "url": "peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/methodologies/mortalitystatisticsinenglandandwalesqmi",
     "census": false,
     "source": "ONS - Death registrations",
     "topic": "Demography and migration",
@@ -555,15 +788,50 @@
     "versions":{
       "2":{
         "dateLabel": 2023,
-        "date": 2023,
-        "dateLabelLong": 2023
+        "dateLabelLong": 2023,
+        "date": 2023
       },
       "4":{
         "dateLabel": 2024,
-        "date": 2024,
-        "dateLabelLong": 2024
+        "dateLabelLong": 2024,
+        "date": 2024
       }
     }
+  },
+  {
+    "code": "deaths_timeseries",
+    "label": "Deaths timeseries",
+    "desc": "The number of people who died in a year, from all causes.",
+    "tableCode": "NM_161_1",
+    "cellCode": "date",
+    "measures": 20100,
+    "dateLabel": "2023 to 2024",
+    "dateLabelLong": "2023 to 2024",
+    "date": false,
+    "chart": "line",
+    "unit": "deaths",
+    "base": "all deaths",
+    "categories": [
+      {
+        "label": "2023",
+        "cells": [
+          2023
+        ]
+      },
+      {
+        "label": "2024",
+        "cells": [
+          2024
+        ]
+      }
+    ],
+    "queryExt": "&measure=1&cause_of_death=0&gender=0&age=0",
+    "lowestGeography": "lsoa",
+    "url": "peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/methodologies/mortalitystatisticsinenglandandwalesqmi",
+    "census": false,
+    "source": "ONS - Death registrations",
+    "topic": "Demography and migration",
+    "validFromVersion": 4
   },
   {
     "code": "legal_partnership_status",
@@ -954,12 +1222,12 @@
         ]
       }
     ],
-    "dateLabel": "Financial year ending 2024",
+    "dateLabel": "FY 2023-24",
+    "dateLabelLong": "Financial year ending 2024",
     "time": 2024,
     "lowestGeography": "lsoa",
     "census": false,
     "source": "ONS analysis of Energy Performance Certificates",
-    "dateLabelLong": "Financial year ending 2024",
     "topic": "Housing",
     "validFromVersion": 2
   },
@@ -2182,6 +2450,7 @@
     "tableCode": "NM_162_1",
     "measures": 20100,
     "dateLabel": "Mar 2026",
+    "dateLabelLong": "March 2026",
     "date": "2026-03",
     "cellCode": "measure",
     "chart": "number",
@@ -2195,7 +2464,6 @@
     ],
     "queryExt": "&gender=0&age=0",
     "lowestGeography": "lsoa",
-    "dateLabelLong": "March 2026",
     "census": false,
     "url": "employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/claimantcountqmi",
     "source": "ONS",
@@ -2204,8 +2472,8 @@
     "versions":{
       "4":{
         "dateLabel": "Mar 2026",
-        "date": "2026-03",
-        "dateLabelLong": "March 2026"
+        "dateLabelLong": "March 2026",
+        "date": "2026-03"
       }
     }
   },

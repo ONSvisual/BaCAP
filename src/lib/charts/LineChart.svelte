@@ -1,5 +1,5 @@
 <script>
-    import { scaleLinear } from "d3-scale";
+    import { scaleLinear, scalePoint } from "d3-scale";
 
     export let data;
     export let yKey = (xKey) => `${xKey}_change`;
@@ -10,7 +10,7 @@
     export let xVal = xDomain[xDomain.length - 1];
     export let base = "";
     export let formatTick = (tick) =>
-        `${tick - 1 > 0 ? "+" : ""}${Math.round((tick - 1) * 100)}`;
+        `${tick - 1 > 0 ? "+" : ""}${((tick - 1) * 100).toFixed(1)}`;
 
     let _data, yDomain, zDomain, xScale, yScale;
     let loaded = false;
@@ -47,7 +47,7 @@
         return [min, max];
     }
     function makePath(d) {
-        let series = xDomain.map((x) => ({ x: +x, y: d[yKey(x)] }));
+        let series = xDomain.map((x) => ({ x: x, y: d[yKey(x)] }));
         return (
             "M" + series.map((d) => `${xScale(d.x)} ${yScale(d.y)}`).join("L")
         );
@@ -65,13 +65,16 @@
         zDomain = _data
             .map((d) => d[zKey])
             .filter((v, i, a) => a.indexOf(v) === i);
-        xScale = scaleLinear()
-            .domain([+xDomain[0], +xDomain[xDomain.length - 1]])
+        xScale = scalePoint()
+            .domain(xDomain)
             .range([0, 100]);
         yScale = scaleLinear().domain([yDomain[0], yDomain[1]]).range([100, 0]);
         loaded = true;
     }
     $: update(data);
+
+
+    $: console.log({_data, xDomain, scaled: xScale?.("Sep 2000")});
 </script>
 
 {#if loaded}
@@ -119,14 +122,14 @@
         <div
                 class="point-text brackets"
                 style:left="{xScale(xVal)}%"
-                style:top="{yPos(yScale(_data[1][yKey(xVal)]), yScale(_data[0][yKey(xVal)]))}%"
+                style:top="{yScale(_data[1][yKey(xVal)])}%"
             >
                 {formatTick(_data[1][yKey(xVal)])}%
             </div>
             <div
                 class="point-text bold"
                 style:left="{xScale(xVal)}%"
-                style:top="{yScale(_data[0][yKey(xVal)])}%"
+                style:top="{yPos(yScale(_data[0][yKey(xVal)]), yScale(_data[1][yKey(xVal)]))}%"
             >
                 {formatTick(_data[0][yKey(xVal)])}%
             </div>
@@ -158,9 +161,10 @@
     .x-scale {
         display: block;
         position: relative;
-        width: 100%;
+        width: calc(100% - 50px);
     }
     .line-group {
+        z-index: 1;
         margin-top: 24px;
     }
     .baseline {
@@ -177,7 +181,12 @@
         position: absolute;
         top: 0;
         line-height: normal;
-        padding-top: 2px;
+        padding: 5px 3px 0;
+        border-left: 1px solid grey;
+    }
+    .x-scale > div:last-of-type {
+        border-left: none;
+        border-right: 1px solid grey;
     }
     .marker-vis {
         transform: translate(0, calc(3px - 0.5rem)) !important;
@@ -224,7 +233,7 @@
         position: absolute;
         line-height: 1;
         background-color: rgba(245, 245, 246, 0.5);
-        transform: translate(-100%, calc(-100% - 7px));
+        transform: translate(6px, -50%);
         font-size: 16px;
     }
     .point-text.brackets {
@@ -234,7 +243,7 @@
         font-size: 14px;
         line-height: 1.3;
         display: block;
-        margin-top: 8px;
+        margin-top: 10px;
         color: #707070;
     }
 </style>

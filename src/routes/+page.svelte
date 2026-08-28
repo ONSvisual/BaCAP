@@ -6,19 +6,9 @@
     Button,
     Cards,
     Card,
-    Footer,
-    Twisty,
   } from "@onsvisual/svelte-components";
   import HeaderImage from "$lib/layout/HeaderImage.svelte";
   import { base } from "$app/paths";
-  import {
-    isDatasetAvailableInVersion,
-    getDatasetForVersion,
-  } from "$lib/util/topic-functions";
-  import { version } from "$lib/stores/mapstore.js";
-  import { get } from "svelte/store";
-
-  import topicsAll from "$lib/config/topics.json";
 </script>
 
 <Breadcrumb
@@ -32,7 +22,7 @@
 >
   <HeaderImage />
   <Section width="full">
-    <Button icon="arrow" iconPosition="after" href="{base}/draw"
+    <Button variant="ghost" icon="arrow" iconPosition="after" href="{base}/draw"
       >Get started</Button
     >
   </Section>
@@ -41,19 +31,6 @@
   <h2>How to use the profile builder</h2>
 
   <p>There are two steps to build your custom area profile.</p>
-  <!-- <p>
-          The first is to draw your area. You can do this using the map on the
-          next page.
-        </p>
-        <p>
-          The second is to select which datasets you want to add to your
-          profile.
-        </p>
-        <p>
-          Once you have drawn your area and chosen your datasets, you will be
-          able to build your profile. You will be able to download data and
-          charts from your profile.
-        </p> -->
 </Section>
 <!-- <Section width="wide" background="#f5f5f5"> -->
 <Cards width="medium" colWidth="wide">

@@ -27,6 +27,7 @@ function makeUrl(table, tableCode, codes, comp) {
 }
 
 function makeCells(table) {
+  // if (table.categoriesIsRange && table.categories.length === 2) return table.categories.map(c => c.cells[0]).join("-");
   if (table.cellCode === "date") return table.categories.map(c => c.cells[0]).join(",");
   const categories = table.categories;
   let cells = [];
@@ -59,9 +60,7 @@ function filterCodes(codes, level = "none") {
     codes.filter(c => !filterLogic(c));
 }
 
-const myCustomAreaFirst = (a, b) => {
-  b.areanm.localeCompare(a.areanm);
-}
+const myCustomAreaFirst = (a, b) => b.areanm.localeCompare(a.areanm);
 
 function calcPercent(data, table) {
   let totals = {};

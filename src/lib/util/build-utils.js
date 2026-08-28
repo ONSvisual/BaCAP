@@ -149,6 +149,7 @@ export function getName() {
 function makeTable(data, meta, name, compName) {
   const rows = [];
   const isSingle = meta.categories.length === 1;
+  const isTimeseries = meta.chart === "line";
 
   for (let i = 0; i < meta.categories.length; i++) {
     const cat = meta.categories[i];
@@ -159,7 +160,7 @@ function makeTable(data, meta, name, compName) {
 
     const row = {
       Variable: meta.label,
-      Category: meta.categories.length === 1 ? meta.label : cat.label,
+      Category: isTimeseries ? meta.label.replace(" timeseries", "") : meta.categories.length === 1 ? meta.label : cat.label,
       [`${name} (count)`]: value.count,
       ...(compValue ? { [`${compName} (count)`]: compValue.count } : {}),
       [`${name} (%)`]: !isSingle ? value.percentage : null,
@@ -170,7 +171,7 @@ function makeTable(data, meta, name, compName) {
       "Base population": meta.base,
       Source: meta.source,
       Geography: meta.lowestGeography === "lsoa" ? "LSOA" : "Output Area",
-      "Time period": meta.dateLabelLong || "2021",
+      "Time period": isTimeseries ? cat.label : meta.dateLabel || "2021",
     };
     rows.push(row);
   }

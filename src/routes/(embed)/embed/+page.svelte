@@ -191,7 +191,7 @@
             />
           {:else if topicsLookup[tab.code]?.chart === "line"}
             <LineChart
-              data={tab.data}
+              data={expandTable(tab, name, comp)}
               zKey="areanm"
               xDomain={topicsLookup[tab.code].categories.map((c) => c.label)}
               base="% change since {topicsLookup[tab.code].categories[0].label}"
